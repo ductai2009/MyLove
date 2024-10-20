@@ -1,0 +1,48 @@
+.anim-explode-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* background: linear-gradient(135deg, #121721, #000); */
+    font: 1em verdana, sans-serif;
+    /* overflow: hidden; */
+    user-select: none;
+    z-index: 10;
+    align-items: center;
+}
+
+.likes {
+    align-self: center;
+    user-select: none;
+}
+
+.like {
+    align-self: center;
+    color: hsl(1, 100%, 75%);
+
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.sparkles {
+    z-index: -1;
+
+    user-select: none;
+    border-radius: 50%;
+    content: '';
+    margin: -0.8875rem;
+    width: 1.775rem;
+    height: 1.775rem;
+    box-shadow: none;
+}
+
+.anim-explode {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    user-select: none;
+    min-width: 400px;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}

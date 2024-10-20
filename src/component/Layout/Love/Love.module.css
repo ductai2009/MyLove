@@ -1,0 +1,214 @@
+.back {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation-name: backdiv;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.heart {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+    animation-name: beat;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+.heart:after {
+    background-color: pink;
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+}
+
+.heart:before {
+    background-color: pink;
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+}
+
+@keyframes backdiv {
+    50% {
+        background: #ffe6f2;
+    }
+}
+
+@keyframes beat {
+    0% {
+        transform: scale(1) rotate(-45deg);
+    }
+
+    50% {
+        transform: scale(0.6) rotate(-45deg);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e8e8e8;
+}
+.con-like {
+    --red: rgb(255, 50, 100);
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.con-like .like {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.con-like .checkmark {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.con-like .outline,
+.con-like .filled {
+    fill: var(--red);
+    position: absolute;
+}
+
+.con-like .filled {
+    animation: kfr-filled 0.5s;
+    display: none;
+}
+
+.con-like .celebrate {
+    position: absolute;
+    animation: kfr-celebrate 0.5s;
+    animation-fill-mode: forwards;
+    display: none;
+}
+
+.con-like .poly {
+    stroke: var(--red);
+    fill: var(--red);
+}
+
+.con-like .like:checked ~ .checkmark .filled {
+    display: block;
+}
+
+.con-like .like:checked ~ .checkmark .celebrate {
+    display: block;
+}
+
+@keyframes kfr-filled {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes kfr-celebrate {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+        display: none;
+    }
+}
+.wrapper {
+    background-color: aquamarine;
+    display: flex;
+    position: relative;
+}
+.img-account {
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+    width: 300px;
+    height: 300px;
+    border-radius: 999px;
+}
+.img-iconLove {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 100px;
+    width: 300px;
+    height: 300px;
+    border-radius: 999px;
+}
+@media screen and (max-width: 650px) {
+    .img-account {
+        position: absolute;
+        z-index: 10;
+        right: 10px;
+        width: 150px;
+        height: 150px;
+        border-radius: 999px;
+    }
+    .img-iconLove {
+        position: absolute;
+        z-index: 10;
+        bottom: 30px;
+        left: 30px;
+        width: 150px;
+        height: 150px;
+        border-radius: 999px;
+    }
+}
+.text {
+    position: absolute;
+    z-index: 10;
+    bottom: -100px;
+    left: -90px;
+    width: 300px;
+    font-size: 23px;
+    font-weight: 500;
+    height: 300px;
+}

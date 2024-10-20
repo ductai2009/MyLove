@@ -1,0 +1,229 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --accent-color: #a876aa;
+    --heart: #e01f4f;
+}
+
+* {
+    box-sizing: border-box;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    height: 100vh;
+}
+.LineHeart {
+    /* position: absolute; */
+    bottom: 10px;
+    font-size: 11px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+}
+
+.floating-heart {
+    position: absolute;
+    animation: 3s linear heart normal infinite;
+    top: 49%;
+    color: var(--heart);
+    font-size: 50px;
+    z-index: 2;
+}
+
+.floating-heart:nth-child(1) {
+    left: calc(50% - 50px);
+    scale: 1.1;
+}
+
+.floating-heart:nth-child(2) {
+    left: calc(50% - 25px);
+    animation-delay: 0.66s;
+}
+
+.floating-heart:nth-child(3) {
+    left: 50%;
+    animation-delay: 1.33s;
+    scale: 1.2;
+}
+
+@keyframes heart {
+    0% {
+        transform: rotate(10deg);
+        opacity: 0;
+    }
+
+    25% {
+        transform: rotate(-10deg);
+        opacity: 1;
+    }
+
+    75% {
+        transform: rotate(10deg);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: rotate(-10deg);
+        opacity: 0;
+        top: 0;
+    }
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-color);
+    color: #fff;
+    border-radius: 50px;
+    position: relative;
+    padding: 0 15px;
+    z-index: 3;
+}
+.comment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-color);
+    color: #fff;
+    border-radius: 50px;
+
+    padding: 15px 30px;
+
+    font-size: 21px;
+    max-width: 70vw;
+    z-index: 1;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: 160%;
+    width: 30%;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    filter: blur(1px);
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    background-color: var(--accent-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    top: calc(100% - 25px);
+    transform: rotate(45deg);
+}
+
+.counter-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 10px;
+    font-size: 30px;
+}
+
+.counter-container i {
+    font-size: 40px;
+}
+
+.counter-container .counter {
+    /* width: 75px; */
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 650px) {
+    body {
+        scale: 0.6;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}
+.action-btn {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.btn-love {
+    padding: 10px 30px;
+    background-color: #a876aa;
+    font-size: 24px;
+    border-radius: 999px;
+    cursor: pointer;
+    color: #f0f0f0;
+    z-index: 11;
+    /* width: 100px; */
+}
+.btn-custom {
+    padding: 10px 30px;
+    background-color: #a876aa;
+    font-size: 24px;
+    border-radius: 999px;
+    cursor: pointer;
+    color: #f0f0f0;
+}
+.btn-love:hover {
+    opacity: 0.9;
+}
+
+svg #line {
+    fill: none;
+    stroke: #e00000;
+    stroke-width: 1.5;
+    stroke-linecap: butt;
+    stroke-linejoin: round;
+    stroke-miterlimit: 4;
+
+    stroke-opacity: 1;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: dash 3s linear infinite;
+}
+svg #point {
+    fill: none;
+    stroke: #f00000;
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 0.1;
+    stroke-opacity: 1;
+    stroke-dasharray: 0.0001, 0.9999;
+    stroke-dashoffset: 1;
+    animation: dash 3s linear infinite;
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 1;
+    }
+    80% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
