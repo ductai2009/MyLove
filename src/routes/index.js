@@ -5,7 +5,7 @@ import LineHeart from '~/component/Layout/component/LineHeart';
 
 const publicRoutes = [
     // ko cần đăng nhập vẫn vào đc
-    { path: '/', component: Home },
+    { path: '/MyLove', component: Home },
     { path: '/love', component: Love },
     { path: '/btn', component: BtnLove1 },
     { path: '/LineHeart', component: LineHeart },
